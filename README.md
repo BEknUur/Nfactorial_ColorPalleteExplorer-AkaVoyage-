@@ -1,1 +1,2 @@
-# -Color-Pallete-Explorer-Aka-Voyage-
+# Color Palette Explorer Task #2 for nFactorial
+
