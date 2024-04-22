@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Color Image</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 350px;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 25px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .preview {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 10px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #388E3C;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .image-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        select, input[type="checkbox"] {
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Save Color Image</h2>
+        <form id="colorForm">
+            <label for="colorInput">Enter Color Code (e.g., #FF5733):</label>
+            <input type="text" id="colorInput" name="color" required>
+            <div class="preview" id="colorPreview"></div>
+            <div class="image-options">
+                <select id="imageSize" name="imageSize">
+                    <option value="200">Small</option>
+                    <option value="400">Medium</option>
+                    <option value="600">Large</option>
+                </select>
+                <label for="borderCheckbox">Add Border:</label>
+                <input type="checkbox" id="borderCheckbox" name="borderCheckbox">
+            </div>
+            <button type="submit">Save Image</button>
+        </form>
+    </div>
+  
+
+    <script>
+        // Function to update color preview
+        function updateColorPreview(colorCode) {
+            const preview = document.getElementById('colorPreview');
+            preview.style.backgroundColor = colorCode;
+        }
+
+        // Event listener for color input
+        document.getElementById('colorInput').addEventListener('input', function(event) {
+            const colorCode = event.target.value;
+            updateColorPreview(colorCode);
+        });
+
+        // Function to generate complementary color
+        function generateComplementaryColor(colorCode) {
+            // Convert hex color code to RGB
+            const hex = colorCode.substring(1);
+            const bigint = parseInt(hex, 16);
+            const r = (bigint >> 16) & 255;
+            const g = (bigint >> 8) & 255;
+            const b = bigint & 255;
+
+            // Calculate complementary color
+            const complementaryR = 255 - r;
+            const complementaryG = 255 - g;
+            const complementaryB = 255 - b;
+
+            // Convert RGB back to hex
+            const complementaryHex = '#' + ((1 << 24) + (complementaryR << 16) + (complementaryG << 8) + complementaryB).toString(16).slice(1);
+
+            return complementaryHex;
+        }
+
+        // Event listener for form submission
+        document.getElementById('colorForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const colorCode = document.getElementById('colorInput').value;
+            const complementaryColor = generateComplementaryColor(colorCode);
+            const imageSize = document.getElementById('imageSize').value;
+            const addBorder = document.getElementById('borderCheckbox').checked;
+
+            const canvas = document.createElement('canvas');
+            canvas.width = imageSize;
+            canvas.height = imageSize;
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = colorCode;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            if (addBorder) {
+                ctx.strokeStyle = '#000';
+                ctx.lineWidth = 5;
+                ctx.strokeRect(0, 0, canvas.width, canvas.height);
+            }
+
+            const dataURL = canvas.toDataURL('image/png');
+
+            const a = document.createElement('a');
+            a.href = dataURL;
+            a.download = 'color_image.png';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        });
+    </script>
+</body>
+</html>
