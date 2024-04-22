@@ -1,0 +1,132 @@
+body {
+    font-family: 'Fira Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #DCD8DE; /* Приглушенный серый */
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+header {
+    background-color:#DCD8DE ; /* Темно-серый */
+    color: #fff; /* Белый текст */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+
+#logo img {
+    width: 30px;
+    margin-right: 10px; 
+}
+
+nav {
+    display: flex;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 12px 24px;
+    margin: 0 10px;
+    border-radius: 30px;
+    background-color: #6c757d; 
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #adb5bd; 
+}
+
+#search {
+    padding: 5px;
+    display: flex;
+}
+
+#search input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+#search button {
+    padding: 10px 20px;
+    background-color: #343a40; 
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+#search button:hover {
+    background-color: #495057; 
+}
+
+#voyage {
+    font-family: 'Pacifico', cursive;
+    font-size: 36px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+#back-btn {
+    color: #fff;
+    background-color: #dc3545; 
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#back-btn:hover {
+    background-color: #c82333; 
+}
+main {
+    text-align: center; /* Выравнивание текста по центру */
+    margin-top: 50px; /* Отступ сверху для центрирования */
+}
+
+#main-text {
+    width: 60%; /* Ширина блока текста */
+    margin: 0 auto; /* Автоматическое выравнивание по центру */
+    padding: 20px; /* Поля вокруг текста */
+    border-radius: 10px; /* Закругление углов */
+    background-color: rgba(255, 255, 255, 0.8); /* Прозрачный белый фон */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
+    font-family: 'Playfair Display', cursive; /* Шрифт текста */
+    font-size: 18px; /* Размер шрифта */
+    line-height: 1.6; /* Межстрочный интервал */
+    color: #333; /* Цвет текста */
+}
+
