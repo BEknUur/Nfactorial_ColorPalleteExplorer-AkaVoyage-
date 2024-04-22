@@ -1,1 +1,1 @@
-# -olor-Pallete-Explorer-Aka-Voyage-
+# -Color-Pallete-Explorer-Aka-Voyage-
