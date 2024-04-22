@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Voyage</title>
+
+    <style>
+        :root {
+            --primary: #D81E5D;
+            --secondary: #8A4FFF;
+            --light: #EEE;
+            --grey: #AAA;
+            --dark: #1e2f42;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Fira Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+        }
+
+        main {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: var(--dark );
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--grey);
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+        }
+
+        .generator-button {
+            color: var(--primary);
+            font-size: inherit;
+            font-weight: 700;
+            background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: 1s ease-out;
+        }
+
+        .generator-button:hover {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
+        h4 {
+            color: var(--grey);
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .colours {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 1rem;
+        }
+
+        .colour {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 1rem;
+            background-color: var(--dark);
+            color: #fff;
+            border-radius: 1rem;
+            transition: 0.4s ease-out;
+            border: 2px solid transparent;
+        }
+
+        .colour.copied {
+            border: 2px solid red;
+        }
+
+        button, input {
+            appearance: none;
+            background: none;
+            border: none;
+            outline: none;
+            color: inherit;
+        }
+
+        button {
+            user-select: none;
+            cursor: pointer;
+        }
+
+        .lock-toggle {
+            opacity: 0.5;
+            transition: 0.4s linear;
+        }
+
+        .lock-toggle.is-locked {
+            opacity: 1;
+        }
+
+        .colour-input {
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .colours {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .colours {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .colour {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 1rem;
+            }
+
+            .colour-input {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Color Voyage</h1>
+        <p>
+            Press [<button class="generator-button">Space</button>] to find a color
+        </p>
+        
+        <h4>Color_Find</h4>
+
+        <div class="colours">
+            <div class="colour">
+                <button class="lock-toggle">
+                    
+                </button>
+                
+                <input type="text" class="colour-input" value="#000000" />
+
+                <button class="copy-hex">Copy</button>
+            </div>
+            <div class="colour">
+                <button class="lock-toggle">
+                    
+                </button>
+                
+                <input type="text" class="colour-input" value="#000000" />
+
+                <button class="copy-hex">Copy</button>
+            </div>
+            <div class="colour">
+                <button class="lock-toggle">
+                    
+                </button>
+                
+                <input type="text" class="colour-input" value="#000000" />
+
+                <button class="copy-hex">Copy</button>
+            </div>
+            <div class="colour">
+                <button class="lock-toggle">
+                    
+                </button>
+                
+                <input type="text" class="colour-input" value="#000000" />
+
+                <button class="copy-hex">Copy</button>
+            </div>
+            <div class="colour">
+                <button class="lock-toggle">
+                    
+                </button>
+                
+                <input type="text" class="colour-input" value="#000000" />
+
+                <button class="copy-hex">Copy</button>
+            </div>
+            <div class="colour">
+                <button class="lock-toggle">
+                    
+                </button>
+                
+                <input type="text" class="colour-input" value="#000000" />
+
+                <button class="copy-hex">Copy</button>
+            </div>
+             <div class="colour">
+                <button class="lock-toggle">
+                    
+                </button>
+                
+                <input type="text" class="colour-input" value="#000000" />
+
+                <button class="copy-hex">Copy</button>
+            </div>
+            <div class="colour">
+                <button class="lock-toggle">
+                    
+                </button>
+                
+                <input type="text" class="colour-input" value="#000000" />
+
+                <button class="copy-hex">Copy</button>
+            </div>
+             <div class="colour">
+                <button class="lock-toggle">
+                    
+                </button>
+                
+                <input type="text" class="colour-input" value="#000000" />
+
+                <button class="copy-hex">Copy</button>
+            </div>
+             <div class="colour">
+                <button class="lock-toggle">
+                    
+                </button>
+                
+                <input type="text" class="colour-input" value="#000000" />
+
+                <button class="copy-hex">Copy</button>
+            </div>
+             <div class="colour">
+                <button class="lock-toggle">
+                    
+                </button>
+                
+                <input type="text" class="colour-input" value="#000000" />
+
+                <button class="copy-hex">Copy</button>
+            </div>
+            
+             <div class="colour">
+                <button class="lock-toggle">
+                    
+                </button>
+                
+                <input type="text" class="colour-input" value="#000000" />
+
+                <button class="copy-hex">Copy</button>
+            </div>
+            
+
+            
+
+
+        </div>
+    </main>
+
+    <script>
+        class Colour {
+            constructor(hex, element) {
+                this.hex = hex;
+                this.element = element;
+                this.locked = false;
+            }
+
+            setHex(hex) {
+                this.hex = hex;
+                this.element.style.backgroundColor = hex;
+                this.element.querySelector(".colour-input").value = hex;
+            }
+
+            setLocked(locked) {
+                this.locked = locked;
+
+                if (locked) {
+                    this.element
+                        .querySelector(".lock-toggle")
+                        .classList.add("is-locked");
+
+                    this.element
+                        .querySelector("img")
+                        .src = "icons/lock-closed.svg";
+                } else {
+                    this.element
+                        .querySelector(".lock-toggle")
+                        .classList.remove("is-locked");
+
+                    this.element
+                        .querySelector("img")
+                        .src = "icons/lock-open.svg";
+                }
+            }
+
+            toggleLocked() {
+                this.setLocked(!this.locked);
+            }
+
+            generateHex() {
+                if (this.locked) {
+                    return;
+                }
+                
+                const chars = "0123456789ABCDEF";
+                let color = "#";
+                for (let i = 0; i < 6; i++) {
+                    color += chars[Math.floor(Math.random() * 16)];
+                }
+                
+                this.setHex(color);
+            }
+
+            copyToClipboard() {
+                const input = this.element.querySelector(".colour-input");
+                input.select();
+                document.execCommand("copy");
+                input.blur();
+
+                this.element.classList.add("copied");
+                setTimeout(() => {
+                    this.element.classList.remove("copied");
+                }, 1000);
+            }
+        }
+
+        const colour_elements = document.querySelectorAll('.colours .colour');
+
+        const colours = [];
+
+        for (let i = 0; i < colour_elements.length; i++) {
+            const colour_element = colour_elements[i];
+
+            const input = colour_element.querySelector(".colour-input");
+            const lock_toggle = colour_element.querySelector(".lock-toggle");
+            const copy_btn = colour_element.querySelector(".copy-hex");
+
+            const hex = input.value;
+
+            const colour = new Colour(hex, colour_element);
+
+            input.addEventListener('input', (e) => colour.setHex(e.target.value));
+            lock_toggle.addEventListener('click', () => colour.toggleLocked());
+            copy_btn.addEventListener('click', () => colour.copyToClipboard());
+
+            colour.generateHex();
+            colours.push(colour);
+        }
+
+        document.querySelector(".generator-button").addEventListener("click", () => {
+            for (let i = 0; i < colours.length; i++) {
+                colours[i].generateHex();
+            }
+        });
+
+        document.addEventListener('keypress', (e) => {
+            if (e.code.toLowerCase() === "space") {
+                document.querySelector(".generator-button").click();
+            }
+        });
+    </script>
+</body>
+</html>
